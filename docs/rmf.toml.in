@@ -2,8 +2,8 @@
 version = "@version@"
 authors = "Treecase"
 license = "GPL-3.0-or-later"
-website_url = "https://github.com/treecase/SickleEditor"
-browse_url = "https://github.com/treecase/SickleEditor"
+website_url = "https://treecase.github.io/rmf-glib"
+browse_url = "https://github.com/treecase/rmf-glib"
 description = "RMF loading library"
 devhelp = true
 search_index = true
@@ -30,7 +30,7 @@ show_index_summary = true
 show_class_heirarchy = true
 
 [source-location]
-base_url = "https://github.com/treecase/SickleEditor/blob/master"
+base_url = "https://github.com/treecase/rmf-glib/blob/main"
 
 [extra]
 content_files = ['about-rmf.md']
