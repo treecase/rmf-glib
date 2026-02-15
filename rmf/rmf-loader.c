@@ -380,7 +380,7 @@ void rmf_loader_log_begin(RmfLoader *self, char const *tag, ...)
 
     g_autofree auto xml = g_strdup_printf("<%s>", result);
     g_autofree auto indented = indent(self->tag_stack->len - 1, xml);
-    g_info("%s+%08lx: %s", self->source, self->offset, indented);
+    g_info("%s+%08" G_GOFFSET_FORMAT "x: %s", self->source, self->offset, indented);
 }
 
 void rmf_loader_log_oneline(
@@ -402,7 +402,7 @@ void rmf_loader_log_oneline(
         xml = g_strdup_printf("<%s>%s</%s>", result, content, tag);
     }
     g_autofree auto indented = indent(self->tag_stack->len, xml);
-    g_info("%s+%08lx: %s", self->source, self->offset, indented);
+    g_info("%s+%08" G_GOFFSET_FORMAT "x: %s", self->source, self->offset, indented);
 }
 
 void rmf_loader_log_end(RmfLoader *self)
@@ -411,5 +411,5 @@ void rmf_loader_log_end(RmfLoader *self)
         = g_ptr_array_remove_index(self->tag_stack, self->tag_stack->len - 1);
     g_autofree auto xml = g_strdup_printf("</%s>", tag);
     g_autofree auto indented = indent(self->tag_stack->len, xml);
-    g_info("%s+%08lx: %s", self->source, self->offset, indented);
+    g_info("%s+%08" G_GOFFSET_FORMAT "x: %s", self->source, self->offset, indented);
 }
